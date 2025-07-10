@@ -66,7 +66,7 @@ else:
     else:
         start = today - timedelta(days=30)
 
-    filtered = df[df['date'] >= start]
+    filtered = df[df['date'] >= pd.to_datetime(start)]
     grouped = filtered.groupby(filtered['date'].dt.date).agg({
         'duration': 'sum',
         'calories': 'sum'
