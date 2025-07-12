@@ -1,8 +1,74 @@
 [
     {
+        "date": "2025-06-15",
+        "type": "Бег",
+        "duration": 30.0,
+        "calories": 200.0
+    },
+    {
+        "date": "2025-06-20",
+        "type": "Велосипед",
+        "duration": 45.0,
+        "calories": 250.0
+    },
+    {
+        "date": "2025-06-25",
+        "type": "Плавание",
+        "duration": 40.0,
+        "calories": 300.0
+    },
+    {
+        "date": "2025-06-30",
+        "type": "Йога",
+        "duration": 60.0,
+        "calories": 150.0
+    },
+    {
+        "date": "2025-07-03",
+        "type": "Бег",
+        "duration": 30.0,
+        "calories": 200.0
+    },
+    {
+        "date": "2025-07-07",
+        "type": "Велосипед",
+        "duration": 60.0,
+        "calories": 300.0
+    },
+    {
+        "date": "2025-07-08",
+        "type": "Велосипед",
+        "duration": 60.0,
+        "calories": 300.0
+    },
+    {
         "date": "2025-07-10",
+        "type": "Тренировка в зале",
+        "duration": 90.0,
+        "calories": 500.0
+    },
+    {
+        "date": "2025-07-11",
+        "type": "Бег",
+        "duration": 45.0,
+        "calories": 250.0
+    },
+    {
+        "date": "2025-07-12",
+        "type": "Йога",
+        "duration": 60.0,
+        "calories": 180.0
+    },
+    {
+        "date": "2025-07-13",
         "type": "Бег",
         "duration": 200.0,
-        "calories": 200.0
+        "calories": 600.0
+    },
+    {
+        "date": "2025-07-14",
+        "type": "Бег",
+        "duration": 300.0,
+        "calories": 800.0
     }
 ]

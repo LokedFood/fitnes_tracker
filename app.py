@@ -54,23 +54,24 @@ if len(st.session_state.data) == 0:
     st.info("Нет записей")
 else:
     df = pd.DataFrame(st.session_state.data)
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date']).dt.date
     df['duration'] = df['duration'].astype(float)
     df['calories'] = df['calories'].astype(float)
 
     period = st.selectbox("Выберите период:", ["За неделю", "За месяц"])
 
-    today = datetime.now()
+    today = datetime.now().date()
     if period == "За неделю":
         start = today - timedelta(days=7)
     else:
         start = today - timedelta(days=30)
 
-    filtered = df[df['date'] >= pd.to_datetime(start)]
+    filtered = df[(df['date'] >= start) & (df['date'] <= today)]
     grouped = filtered.groupby(filtered['date'].dt.date).agg({
         'duration': 'sum',
         'calories': 'sum'
     }).reset_index()
+    grouped = grouped.sort_values('date')
     grouped['date'] = grouped['date'].astype(str)
 
     st.write(f"**Статистика {period.lower()}**")
