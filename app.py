@@ -62,11 +62,16 @@ else:
 
     today = datetime.now().date()
     if period == "За неделю":
-        start = today - timedelta(days=7)
-    else:
-        start = today - timedelta(days=30)
+        todweek = today.weekday()
+        week = today - timedelta(days=todweek)
+        endweek = week + timedelta(days=6)
+        start = week
+        end = endweek
+    elif period == "За месяц":
+        start = today.replace(day=1)
+        end = today
 
-    filtered = df[(df['date'] >= start) & (df['date'] <= today)]
+    filtered = df[(df['date'] >= start) & (df['date'] <= end)]
     grouped = filtered.groupby(filtered['date'].dt.date).agg({
         'duration': 'sum',
         'calories': 'sum'
