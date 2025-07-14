@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import os
 from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
 
 filename = 'workouts.json'
 
@@ -81,3 +82,11 @@ else:
 
     st.write(f"**Статистика {period.lower()}**")
     st.dataframe(grouped)
+
+    fig, ax = plt.subplots()
+    ax.plot(grouped['date'], grouped['duration'], label='Минуты')
+    ax.plot(grouped['date'], grouped['calories'], label='Калории')
+    ax.legend()
+    ax.grid(True)
+    plt.xticks(rotation=90)
+    st.pyplot(fig)  
